@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Tour Guide</string>
+    <string name="app_name">西安旅游</string>
+    <string name="item_attractions">旅游景点</string>
+    <string name="item_food">西安美食</string>
+    <string name="item_hotel">酒店客栈</string>
+    <string name="item_souvenir">旅行值得买</string>
 </resources>
