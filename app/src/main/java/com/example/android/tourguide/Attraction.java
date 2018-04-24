@@ -4,7 +4,14 @@ public class Attraction {
     private String mName;
     private String mAddress;
     private String mDetail;
-    private int mResource;
+    private int mResource = -1;
+
+    public Attraction(String name, String address, String detail){
+        this.mName = name;
+        this.mAddress = address;
+        this.mDetail = detail;
+    }
+
     public Attraction(String name, String address, String detail, int resourceId){
         this.mName = name;
         this.mAddress = address;

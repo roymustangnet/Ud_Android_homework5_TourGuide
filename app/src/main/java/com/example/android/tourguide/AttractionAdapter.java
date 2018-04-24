@@ -32,8 +32,11 @@ public class AttractionAdapter extends ArrayAdapter<Attraction> {
         TextView detailTextView = (TextView) listItemView.findViewById(R.id.item_detail);
         detailTextView.setText(att.getDetail());
         ImageView imageImageView = (ImageView) listItemView.findViewById(R.id.item_image);
-        imageImageView.setImageResource(att.getImgResource());
-
+        if(att.getImgResource() != -1) {
+            imageImageView.setImageResource(att.getImgResource());
+        } else {
+            imageImageView.setVisibility(View.GONE);
+        }
         return listItemView;
     }
 }
