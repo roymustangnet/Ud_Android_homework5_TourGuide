@@ -13,7 +13,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             return new BeijingFragment();
         } else if (position == 1) {
-            return null;
+            return new XianFragment();
         } else if (position == 2) {
             return null;
         } else {
@@ -23,6 +23,6 @@ public class CategoryAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 1;
+        return 2;
     }
 }

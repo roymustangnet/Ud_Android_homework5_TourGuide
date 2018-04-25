@@ -13,6 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class AttractionAdapter extends ArrayAdapter<Attraction> {
+    int mDatailLength = 35;
     public AttractionAdapter(Context context, ArrayList<Attraction> atts){
         super(context, 0, atts);
     }
@@ -30,7 +31,10 @@ public class AttractionAdapter extends ArrayAdapter<Attraction> {
         TextView titleTextView = (TextView)listItemView.findViewById(R.id.item_title);
         titleTextView.setText(att.getName());
         TextView detailTextView = (TextView) listItemView.findViewById(R.id.item_detail);
-        detailTextView.setText(att.getDetail());
+        String detail = att.getDetail();
+        if(detail.length() > mDatailLength)
+            detail = detail.substring(0,mDatailLength) + "...";
+        detailTextView.setText(detail);
         ImageView imageImageView = (ImageView) listItemView.findViewById(R.id.item_image);
         if(att.getImgResource() != -1) {
             imageImageView.setImageResource(att.getImgResource());
