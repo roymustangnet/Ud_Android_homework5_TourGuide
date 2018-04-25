@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">旅游指南</string>
-
+    <string name='beijing_category'>北京</string>
+    <string name='xian_category'>西安</string>
+    <string name='changsha_category'>长沙</string>
+    <string name='chongqing_category'>重庆</string>
 </resources>
