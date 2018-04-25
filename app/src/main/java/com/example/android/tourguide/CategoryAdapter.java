@@ -18,7 +18,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         } else if (position == 1) {
             return new XianFragment();
         } else if (position == 2) {
-            return null;
+            return new ChangshaFragment();
         } else {
             return null;
         }
@@ -26,7 +26,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Override
