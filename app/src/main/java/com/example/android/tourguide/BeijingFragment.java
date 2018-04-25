@@ -47,11 +47,22 @@ public class BeijingFragment extends Fragment {
                 "北京市朝阳区工人体育场南门",
                 "北京市朝阳区大山子张万坟金南路18号",
                 "北京市东城区国子监街13号"};
-        int[] resourceIds = {};
+        int[] resourceIds = {
+                R.drawable.beijing_gugong,
+                R.drawable.beijing_badaling,
+                R.drawable.beijing_yiheyuan,
+                R.drawable.beijing_gongwangfu,
+                R.drawable.beijing_yuanmingyuan,
+                R.drawable.beijing_shuilifang,
+                R.drawable.beijing_dongwuyuan,
+                R.drawable.beijing_fuguo,
+                R.drawable.beijing_guanfu,
+                R.drawable.beijing_guozijian
+            };
         ArrayList<Attraction> atts = new ArrayList<>();
         for(int i = 0; i < names.length; i ++){
 //            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
-            Attraction att = new Attraction(names[i], addresses[i], details[i]);
+            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
             atts.add(att);
         }
 

@@ -20,13 +20,13 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         } else if (position == 2) {
             return new ChangshaFragment();
         } else {
-            return null;
+            return new ChongqingFragment();
         }
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Override

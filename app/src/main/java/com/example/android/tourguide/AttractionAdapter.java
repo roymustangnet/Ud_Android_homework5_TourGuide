@@ -31,10 +31,10 @@ public class AttractionAdapter extends ArrayAdapter<Attraction> {
         TextView titleTextView = (TextView)listItemView.findViewById(R.id.item_title);
         titleTextView.setText(att.getName());
         TextView detailTextView = (TextView) listItemView.findViewById(R.id.item_detail);
-        String detail = att.getDetail();
-        if(detail.length() > mDatailLength)
-            detail = detail.substring(0,mDatailLength) + "...";
-        detailTextView.setText(detail);
+//        String detail = att.getDetail();
+//        if(detail.length() > mDatailLength)
+//            detail = detail.substring(0,mDatailLength) + "...";
+        detailTextView.setText("地址："+att.getAddress());
         ImageView imageImageView = (ImageView) listItemView.findViewById(R.id.item_image);
         if(att.getImgResource() != -1) {
             imageImageView.setImageResource(att.getImgResource());
