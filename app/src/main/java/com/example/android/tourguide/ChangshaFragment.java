@@ -1,26 +1,15 @@
 package com.example.android.tourguide;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class ChangshaFragment extends Fragment {
+public class ChangshaFragment extends MyFragment {
     public ChangshaFragment(){
 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.list_attractions, container, false);
-
-
+    protected ArrayList<Attraction> getAttsInfo(){
         String[] names = {"岳麓山","橘子洲","火宫殿","长沙世界之窗","天心阁","湖南省博物馆","烈士公园","雷锋纪念馆","开福寺","花明楼景区"};
         String[] details = {"岳麓山风景名胜区系湖南省首批审列公布的风景名胜区。位于古城长沙的湘江两岸，总面积 36平方公里，由麓山、天马山、桃花岭、石佳岭四个景区及新民学会旧址、南津城士城头二景点组成。麓山景区为全区精萃所在，面积6平方公里。主峰海拔 300.8米，年平均气温17℃，年降水量1200-1400毫升。 岳麓山濒临湘江，依江面市，交通便利，湘流环境，桔洲横前，古城相望，山、江、洲、城浑然一体，实为天作之胜。兹山荟萃湘楚文化精华，素以名胜古迹众多， 植物资源丰富，革命烈士墓葬群集，风景优美，且集儒释道为一体，唐代诗人刘禹锡的“群峰朝拱如骏奔”即是赞其天然雄浑之势。岳麓山群峦叠翠，古木参天。现 有植物174科559属977种，其中晋朝的罗汉松、唐代银杏、宋时香樟、明清枫栗均系千年古树，老干虬枝，苍劲挺拔，高耸入云。千年学府岳麓书院为宋代 四大书院之冠，亦座落在山中；号称“汉魏最初名胜，湖湘第一道场”的古麓山寺，亦座落在山中",
                 "长沙为历史文化名城，荆楚岁时，先民祭祀火神，固无论已，稽诸何方志，今之火宫殿，又名乾元宫，建于明万历五年（1577年）前，距今已有四百三十余年历史。道光六年(1826年)重修，火宫殿附有火神庙、财神庙、弥陀阁、普慈阁之建筑，面积计六千余平方米。民国二十七年(1938年)，文夕大火，殿宇焚毁殆尽，民国三十年(1941年)重修。仅恢复火神庙堂，废墟搭建棚屋，其时小商小贩、三教九流，杂居其中，几必可与旧日北京天桥、南京夫子庙媲美。而经营饮食者最多，其风味小吃，为老长沙居民及南北美食家所称道。建国后，市场日益繁荣，饮食业日趋发达，到1956年公私合营乃成立火宫殿饮食店。1959年、1960年，先后拆除棚屋，兴建楼房，辟为对外开放单位。1984年、1992年又两度修葺，店堂楼庭，踵事增华。然自改革开放以来，百业兴旺，旧有规模，远不能满足人民群众之需要。2001年长沙市人民政府高瞻远瞩，遂有建设坡子街美食一条街之规划，是年五月，火宫殿有限公司在各级政府与长沙饮 食集团总公司之关怀支持下，乃筹集资金一千万元，进行改扩修建，重塑火神像，恢复火神庙，古戏台，漆饰火宫殿牌楼，增设石牌坊等。群策群力，于2002年2月竣工。茶园戏台、书场、艺苑，俱增旧制，而楼台亭阁，景物全新，曲槛徊廊，风华胜昔。营业面积达7000平方米，规模之大，设施之全，前所未有。夫薪尽火传，饮和食德，由火文化引发的\"火庙文化\"所孕育发展之饮食文化，与史同在，与时俱进。此次古殿新修，盖亦弘扬民族传统，传承文明，盛世盛举，意义重大，爱勤碑为记，以垂久远。",
@@ -42,16 +31,25 @@ public class ChangshaFragment extends Fragment {
                 "湖南省长沙市望城县雷锋镇振兴路42号",
                 "湖南省长沙市开福区开福寺路136号",
                 "湖南省长沙市宁乡县花明楼镇"};
-        int[] resourceIds = {};
+        int[] resourceIds = {
+            R.drawable.changsha_yuelushan,
+            R.drawable.changsha_juzizhou,
+            R.drawable.changsha_huogongdian,
+            R.drawable.changsha_shijiezhichuang,
+            R.drawable.changsha_tianxinge,
+            R.drawable.changsha_bowuguan,
+            R.drawable.changsha_lieshigongyuan,
+            R.drawable.changsha_leifeng,
+            R.drawable.changsha_kaifusi,
+            R.drawable.changsha_huaminglou
+        };
         ArrayList<Attraction> atts = new ArrayList<>();
         for(int i = 0; i < names.length; i ++){
 //            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
-            Attraction att = new Attraction(names[i], addresses[i], details[i]);
+            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
             atts.add(att);
         }
 
-        ListView lv = (ListView) rootView.findViewById(R.id.list_view);
-        lv.setAdapter(new AttractionAdapter(getActivity(), atts));
-        return rootView;
+        return atts;
     }
 }

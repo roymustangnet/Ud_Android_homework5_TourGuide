@@ -1,26 +1,14 @@
 package com.example.android.tourguide;
 
-import android.support.v4.app.Fragment;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
-
 import java.util.ArrayList;
 
-public class ChongqingFragment extends Fragment {
+public class ChongqingFragment extends MyFragment {
     public ChongqingFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.list_attractions, container, false);
-
-
+    protected ArrayList<Attraction> getAttsInfo(){
         String[] names = {"磁器口古镇","解放碑步行街","洪崖洞商业街","白公馆","渣滓洞","武隆天生三桥","大足石刻","罗汉寺","三峡博物馆"};
         String[] details = {"磁器口古镇位于重庆市沙坪坝区嘉陵江畔，始建于宋代，拥有“一江两溪三山四街”的独特地貌，形成天然良港，是嘉陵江边重要的水陆码头。曾经“白日里千人拱手，入夜后万盏明灯”繁盛一时。\n磁器口古镇蕴含丰富的巴渝文化、宗教文化、沙磁文化、红岩文化和民间文化，各具特色。一条石板路，千年磁器口，是重庆古城的缩影和象征，被赞誉为“小重庆”。",
                 "解放碑步行街位于重庆市渝中区，历来就是重庆最繁华的商业中心地带。这里有数量众多的百货公司、酒店、饭店等，是重庆购物、美食和走走逛逛的好去处，重庆时尚地标之一。当然，这里更是来重庆打望美女的绝佳去处。步行街以解放碑为中心，包括周边的民权路、民族路、邹容路和八一路和五一路等。\n商场多，小吃多，美女多，是步行街“三多”。你在这里可以逛逛“高大上”的美美时代百货、大都会广场，也有比较平民的重庆百货大楼和太平洋百货；在步行街上你几乎能吃到所有的重庆美食和小吃，这里有八一路好吃街，便宜又好吃的酸辣粉、山城小汤圆和抄手都能在这里找到。而当你步行街上闲逛时，没走几步，就会有一位身材高挑，皮肤白皙的重庆美眉从你身边闪过。",
@@ -41,16 +29,25 @@ public class ChongqingFragment extends Fragment {
                 "重庆市大足区宝顶镇宝顶山石刻风景区",
                 "重庆市渝中区罗汉寺街7号",
                 "重庆市渝中区人民路236号"};
-        int[] resourceIds = {};
+        int[] resourceIds = {
+            R.drawable.chongqing_ciqikou,
+            R.drawable.chongqing_jiefangbei,
+            R.drawable.chongqing_hongyadong,
+            R.drawable.chongqing_baigongguan,
+            R.drawable.chongqing_zhazidong,
+            R.drawable.chongqing_tianshengsanqiao,
+            R.drawable.chongqing_dazushike,
+            R.drawable.chongqing_luohansi,
+            R.drawable.chongqing_sanxiabowuguan
+
+        };
         ArrayList<Attraction> atts = new ArrayList<>();
         for(int i = 0; i < names.length; i ++){
 //            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
-            Attraction att = new Attraction(names[i], addresses[i], details[i]);
+            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
             atts.add(att);
         }
 
-        ListView lv = (ListView) rootView.findViewById(R.id.list_view);
-        lv.setAdapter(new AttractionAdapter(getActivity(), atts));
-        return rootView;
+        return atts;
     }
 }

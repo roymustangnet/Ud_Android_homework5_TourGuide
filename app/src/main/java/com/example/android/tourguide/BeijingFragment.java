@@ -1,18 +1,11 @@
 package com.example.android.tourguide;
 
-import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
+
 
 import java.util.ArrayList;
 
 
-public class BeijingFragment extends Fragment {
+public class BeijingFragment extends MyFragment {
 
 
     public BeijingFragment() {
@@ -20,12 +13,7 @@ public class BeijingFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.list_attractions, container, false);
-
-
+    protected ArrayList<Attraction> getAttsInfo(){
         String[] names = {"故宫博物院","八达岭长城","颐和园","恭王府","圆明园","水立方","北京动物园","富国海底世界","观复博物馆","国子监"};
         String[] details = {"故宫是世界上现存最大最完整的古代建筑群，也是人类珍贵的文化遗产。明清先后有二十四位皇帝在这里临朝为政和日常生活。它拥有世界上现存规模最大、保存最完整、建构最精致的古代宫殿建筑群，拥有150万件历史文物典籍和艺术工艺珍品，故宫博物院因此而举世闻名。",
                             "八达岭长城史称天下九塞之一，是万里长城的精华，在明长城中，独具代表性。八达岭长城是万里长城向游人开得最早的地段，八达岭景区以八达岭长城为主，兴建了八达岭饭店、全周影院和由江泽民主席亲笔题名的中国长城博物馆等功能齐全的现代化旅游服务设施。八达岭景区以其宏伟的景观、完善的设施和深厚的文化历史内涵而著称于世。",
@@ -66,10 +54,7 @@ public class BeijingFragment extends Fragment {
             atts.add(att);
         }
 
-        ListView lv = (ListView) rootView.findViewById(R.id.list_view);
-        lv.setAdapter(new AttractionAdapter(getActivity(), atts));
-        return rootView;
+        return atts;
     }
-
-
+    
 }

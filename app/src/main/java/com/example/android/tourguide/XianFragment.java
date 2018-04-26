@@ -1,25 +1,14 @@
 package com.example.android.tourguide;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
-
 import java.util.ArrayList;
 
-public class XianFragment extends Fragment {
+public class XianFragment extends MyFragment {
     public XianFragment(){
 
     }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.list_attractions, container, false);
-
-
+    protected ArrayList<Attraction> getAttsInfo(){
         String[] names = {"兵马俑","华清池","法门寺","大雁塔","钟楼","回民街","大明宫","小雁塔","汉阳陵"};
         String[] details = {"秦始皇兵马俑坑位于西安市临潼区城东6公里的西杨村南，西距秦始皇帝陵1225米，是秦始皇陵园中最大的一组陪葬坑，坑中所埋藏的浩大俑群是秦王朝强大军队的缩影。 1974年西杨村农民打井时发现了震惊中外的秦始皇兵马俑。它是由三个大小不同的坑组成，分别编号为一号坑、二号坑、三号坑。三个俑坑总面积近20000平方米，坑内共有同真人、真马大小相似的陶俑、陶马约8000件，实用兵器数以万计。 ",
                 "华清池，亦名华清宫。东距西安23公里。紧依京畿的地理位置，旖旎秀美的山水风光，自然造化的山地温泉，让周、秦、汉、隋、唐历代帝王皆在此营建离宫别苑，享受天然的旖旎风情。",
@@ -41,16 +30,26 @@ public class XianFragment extends Fragment {
                 "陕西省西安市友谊西路荐福寺内",
                 "陕西省西安市咸阳国际机场专线公路东段",
                 };
-        int[] resourceIds = {};
+        int[] resourceIds = {
+            R.drawable.xian_bingmayong,
+            R.drawable.xian_huaqingchi,
+            R.drawable.xian_famensi,
+            R.drawable.xian_dayata,
+            R.drawable.xianzhonglou,
+            R.drawable.xian_huiminjie,
+            R.drawable.xian_daminggong,
+            R.drawable.xian_xiaoyanta,
+            R.drawable.xian_hanyangling
+        };
         ArrayList<Attraction> atts = new ArrayList<>();
         for(int i = 0; i < names.length; i ++){
 //            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
-            Attraction att = new Attraction(names[i], addresses[i], details[i]);
+            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
             atts.add(att);
         }
 
-        ListView lv = (ListView) rootView.findViewById(R.id.list_view);
-        lv.setAdapter(new AttractionAdapter(getActivity(), atts));
-        return rootView;
+        return atts;
     }
+
+
 }
