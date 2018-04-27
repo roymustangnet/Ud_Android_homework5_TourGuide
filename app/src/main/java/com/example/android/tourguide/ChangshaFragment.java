@@ -45,7 +45,6 @@ public class ChangshaFragment extends MyFragment {
         };
         ArrayList<Attraction> atts = new ArrayList<>();
         for(int i = 0; i < names.length; i ++){
-//            Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
             Attraction att = new Attraction(names[i], addresses[i], details[i], resourceIds[i]);
             atts.add(att);
         }
