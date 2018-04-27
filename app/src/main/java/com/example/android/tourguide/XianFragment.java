@@ -9,27 +9,41 @@ public class XianFragment extends MyFragment {
 
     @Override
     protected ArrayList<Attraction> getAttsInfo(){
-        String[] names = {};
+        String[] names = {
+                getContext().getString(R.string.xian_name_bingmayong),
+                getContext().getString(R.string.xian_name_huaqingchi),
+                getContext().getString(R.string.xian_name_famensi),
+                getContext().getString(R.string.xian_name_dayanta),
+                getContext().getString(R.string.xian_name_zhonglou),
+                getContext().getString(R.string.xian_name_huiminjie),
+                getContext().getString(R.string.xian_name_daminggong),
+                getContext().getString(R.string.xian_name_xiaoyanta),
+                getContext().getString(R.string.xian_name_hanyangling)
+        };
+
         String[] details = {
-                "华清池，亦名华清宫。东距西安23公里。紧依京畿的地理位置，旖旎秀美的山水风光，自然造化的山地温泉，让周、秦、汉、隋、唐历代帝王皆在此营建离宫别苑，享受天然的旖旎风情。",
-                "法门寺，又名“真身宝塔”，位于炎帝故里、青铜器之乡——宝鸡市，2004年被联合国教科文组织评为“世界第九大奇迹”， [1]  全国重点文物保护单位。据传始建于东汉明帝十一年（公元68年），约有1700多年历史，素有“关中塔庙始祖”之称，周魏以前称作“阿育王寺”，隋文帝时改称“成实道场”，唐高祖时改名“法门寺”。法门寺被誉为皇家寺庙，因安置释迦牟尼佛指骨舍利而成为举国仰望的佛教圣地。法门寺佛塔被誉为“护国真身宝塔”。寺庙所在的法门寺文化景区为国家AAAAA级旅游景区。",
-                "大雁塔是西安市著名的旅游景点。唐代永徽三年（公元652年），玄奘为藏经典而修建，被视为古都西安的象征。 大雁塔又名大慈恩寺塔，位于中国陕西省西安市南郊大慈恩寺内。因坐落在慈恩寺西院内，大雁塔原称慈恩寺西院浮屠（浮屠即塔的意思）。是中国唐朝佛教建筑艺术杰作。 大雁塔始建于公元652年（唐高宗永徽三年）。玄奘法师为供奉从印度带回的佛像、舍利和梵文经典，在慈恩寺的西塔院建起一座五层砖塔。在武则天长安年间重建。后来又经过多次修整。大雁塔在唐代就是著名的游览胜地，因而留有大量文人雅士的题记，仅明、清朝时期的题名碑就有二百余通。 大雁塔是楼阁式砖塔，塔通高64.5米，塔身为七层，塔体呈方形锥体，由仿木结构形成开间，由下而上按比例递减，塔内有木梯可盘登而上。每层的四面各有一个拱券门洞，可以凭栏远眺。整个建筑气魄宏大，造型简洁稳重，比例协调适度，格调庄严古朴，是保存比较完好的楼阁式塔。",
-                "西安钟楼始建于明洪武十七年（公元1384年），原建于今西大街北广济街东侧，明万历十年（公元1582年）移于现址。钟楼是一座重檐三滴水式四角攒尖顶的阁楼式建筑，面积1377.64平方米，建在用青砖、白灰砌成的方形基座上。基座下有高与宽均为6米的十字形券洞与东南西北四条大街相通。",
-                "在西起西安西大街桥梓口，东至广济街的西安古城西北一隅，聚居着约30万回族同胞，当地人习惯称那里为回坊。它以浓郁的穆斯林文化和氛围，为古城构筑了一道特异的风景线。 登上城北的安远门城墙，向西南方望去，可见建造于隋朝的化觉巷大清真寺。在那圆形叫经楼顶部一弯金色新月的映衬下，散布着大大小小十几座清真寺和各式各样伊斯兰风格的角楼。绿树掩映的街道上，许多戴白帽围着盖头的穆斯林男女信徒以及随处可见的阿拉伯文件张贴画分外引人注目。 当华灯初放的时候，回坊里每一条街道香气弥漫食客云集。",
-                "大明宫国家遗址公园是世界文化遗产，全国重点文物保护单位。位于陕西省西安市太华南路，大明宫地处长安城北部的龙首原上，始建于唐太宗贞观八年(634年)，平面略呈梯形。",
-                "小雁塔位于唐长安城安仁坊（今陕西省西安市南郊）荐福寺内，又称“荐福寺塔”，建于唐景龙年间，与大雁塔同为唐长安城保留至今的重要标志。小雁塔是中国早期方形密檐式砖塔的典型作品，原有15层，现存13层，高43.4米，塔形秀丽，是唐代佛教建筑艺术遗产，佛教传入中原地区并融入汉族文化的标志性建筑。",
-                "汉景帝刘启陵墓，位于咸阳市秦都区张家湾机场汽车专用公路西侧。陵墓东西长166.5米，南北宽155.4米，高31.6米，呈覆斗型。1990年5月，汉陵考古队在阳陵南区发现一组14行共24个俑坑的丛葬设施。现已清理的第6和第8号两坑，虽均遭盗扰，仍出土彩俑彩陶400余件，铜铁兵器、农工工具、衣饰及货币千余件。另从17号坑发掘出土木车数乘和一批随车陶兵陶俑。出土陶俑均为男性裸体，除发、须、眉、眼涂黑外，通体为橙红色彩绘。 据测算，阳陵的陶俑总数可达数万个。伴随出土文物以金属器物为主，有铜簇、弩机、带钩、马衔、“半两钱”、铁矛、戟、剑，还有陶井、灶等。",
-                };
-        String[] addresses = {"西安市临潼区骊山北麓",
-                "陕西省西安市华清路038号",
-                "陕西省西安市光华路216号",
-                "陕西省西安市雁塔南路北口大雁塔南广场北侧",
-                "陕西省西安市东大街与南大街交汇处",
-                "陕西省西安市西大街1号",
-                "陕西省西安市未央区太华北路43号",
-                "陕西省西安市友谊西路荐福寺内",
-                "陕西省西安市咸阳国际机场专线公路东段",
-                };
+                getContext().getString(R.string.xian_detail_bingmayong),
+                getContext().getString(R.string.xian_detail_huaqingchi),
+                getContext().getString(R.string.xian_detail_famensi),
+                getContext().getString(R.string.xian_detail_dayanta),
+                getContext().getString(R.string.xian_detail_zhonglou),
+                getContext().getString(R.string.xian_detail_huiminjie),
+                getContext().getString(R.string.xian_detail_daminggong),
+                getContext().getString(R.string.xian_detail_xiaoyanta),
+                getContext().getString(R.string.xian_detail_hanyangling)
+        };
+
+        String[] addresses = {
+                getContext().getString(R.string.xian_address_bingmayong),
+                getContext().getString(R.string.xian_address_huaqingchi),
+                getContext().getString(R.string.xian_address_famensi),
+                getContext().getString(R.string.xian_address_dayanta),
+                getContext().getString(R.string.xian_address_zhonglou),
+                getContext().getString(R.string.xian_address_huiminjie),
+                getContext().getString(R.string.xian_address_daminggong),
+                getContext().getString(R.string.xian_address_xiaoyanta),
+                getContext().getString(R.string.xian_address_hanyangling)
+        };
 
 
         int[] resourceIds = {
